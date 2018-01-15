@@ -6,10 +6,10 @@
 	<body>
 		<h1><center>WELCOME TO ASSIGNMENT PAGE</center></h1>
 		<form method = "get" action = "http://careerachiever.in/assign.php" autocomplete = "off">
-			<input type = "text" placeholder = "Enter your name" name = "applicantName" autofocus><br/>
-			<input type = "email" value = "@gmail.com" name = "email_id"><br/>
-			<input type = "text" value = "himanshu" readonly = "readonly" disabled = "disabled"><br/>
-			<input type = "list" list = "BRAND" placeholder = "Your Phone brand" name = "handset"><br/>
+			NAME :<input type = "text" placeholder = "Enter your name" name = "applicantName" autofocus><br/>
+			EMAIL-ID :<input type = "email" value = "@gmail.com" name = "email_id"><br/>
+			USER-NAME :<input type = "text" value = "himanshu" readonly = "readonly" disabled = "disabled"><br/>
+			PHONE-BRAND :<input id = "phone" type = "list" list = "BRAND" placeholder = "Your Phone Brand" name = "handset" required><br/>
 			<datalist id = "BRAND">
 				<option>oneplus</option>
 				<option>apple</option>
@@ -18,11 +18,17 @@
 				<option>LG</option>
 				<option>htc</option>
 			</datalist>
-			<input type = "submit" value = "SUBMIT">
+			<input type = "submit" onclick = "checker()" value = "SUBMIT">
 		</form>
 		</form>
-		<script>
-			
+		<script type = "application/javascript">
+		function checker()
+			{
+			var p = document.getElementById("phone");
+			console.log(p);
+			if(p == null)
+				window.alert("Enter Phone Brand");
+			}
 		</script>
 		
 	</body>
